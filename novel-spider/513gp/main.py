@@ -26,8 +26,8 @@ def get_page_content(url):
 
 
 urls = get_page_urls('http://zhuoguji.513gp.org/')
-with open('./捉蛊记.txt', 'w') as f:
-    for index, url in enumerate(urls):
+for index, url in enumerate(urls):
+    with open('./dist/%d.txt' % (index + 1), 'w', encoding='utf-8') as f:
         content = get_page_content(url)
         f.write(content)
         f.write('\n\n\n============================================================================================\n\n\n')
